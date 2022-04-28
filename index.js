@@ -30,3 +30,12 @@ console.log(typeof objNumber); // new 연산자를 붙이면 인스턴스로 생
 console.log(number === objNumber);
 console.log(typeof 20..toString()); // IEEE 754 표준으로 인해 JS는 숫자를 실수형으로 표시함.
 console.log(typeof number.toString());
+
+console.log("12345".indexOf(4));
+console.log("12345".indexOf(4, -1));
+console.log("12345".indexOf(4, 2));
+console.log("12345".indexOf(6));
+console.log("12345".lastIndexOf(3));
+console.log("12345".lastIndexOf(1, 1));
+console.log("12345".lastIndexOf(5, 1));
+console.log("12345".lastIndexOf(3, -1));
