@@ -1,0 +1,17 @@
+<html>
+	<head>
+
+	</head>
+	<body>
+		
+	</body>
+	<script>
+		let html = ["<ul>"];
+		for (let idx=1; idx <= 10; idx++) {
+			html.push(`<li id=id${idx}>id${idx}</li>`);
+		}
+		html.push("</ul>");
+		let string = html.join("");
+		document.body.innerHTML = string;
+	</script>
+</html>
