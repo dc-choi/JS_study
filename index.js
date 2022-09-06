@@ -39,3 +39,9 @@ console.log("12345".lastIndexOf(3));
 console.log("12345".lastIndexOf(1, 1));
 console.log("12345".lastIndexOf(5, 1));
 console.log("12345".lastIndexOf(3, -1));
+
+let value = [101, 26, 7, 1234];
+value.sort((one, two) => {
+	return two - one;
+});
+console.log(value);
