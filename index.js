@@ -45,3 +45,21 @@ value.sort((one, two) => {
 	return two - one;
 });
 console.log(value);
+
+let array = [];
+for (let i = 1; i <= 1000000; i++) {
+	array.push(i);
+}
+
+let check = () => {};
+
+let start = Date.now();
+array.forEach(() => {
+	check();
+});
+let end = Date.now();
+
+console.log(end - start);
+
+let data = { data: 'qwer', data2: 'qwerqwerqwer'};
+console.log(JSON.stringify(data, null, 4));
