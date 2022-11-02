@@ -67,17 +67,17 @@ console.log(JSON.stringify(data, null, 4));
 /**
  * 브라우저에서 실행해야하는 코드
  */
-function book() {
-	// debugger;
-	// var title = 'JS';
-	// function getBook() {
-	// 	return title;
-	// }
-	// var readBook = function(){};
-	// getBook();
-}
+// function book() {
+// 	debugger;
+// 	var title = 'JS';
+// 	function getBook() {
+// 		return title;
+// 	}
+// 	var readBook = function(){};
+// 	getBook();
+// }
 
-book();
+// book();
 
 // 선언문은 두번 선언하면 선언마다 갱신된다. 그래서 책2가 나옴.
 function getBook() {
@@ -114,3 +114,43 @@ console.log(getBook4());
 function getBook4() {
 	return '책2';
 }
+
+// 다음 함수의 실행을 엔진 관점에서 논리적으로 해석하시오.
+function book() {
+	debugger;
+	function get() {
+		return point
+	}
+	var point = 10;
+	return get();
+}
+console.log(book());
+
+/**
+ * 1. book 오브젝트의 [[Scope]]에 글로벌 오브젝트를 설정한다. (상위를 설정해준다.)
+ * 2. book()을 호출한다.
+ * 3. 엔진은 book()의 실행 콘텍스트를 생성하고 그 안으로 이동한다.
+ * 
+ * 4. 렉시컬, 변수, this 바인딩 환경 컴포넌트를 생성하여 첨부한다.
+ * 5. get()과 var point를 환경 레코드로 생성하고 렉시컬 환경 컴포넌트에 바인딩함.
+ * 6. 함수 안에서 외부 변수를 사용하지 않아서, 외부 렉시컬 환경 참조를 생성해도 따로 렉시컬 환경 컴포넌트에 값이 바인딩이 되지않는다.
+ * 
+ * 7. 파라미터를 따로 사용하지 않아서, 환경 레코드에 작성되지 않는다.
+ * 8. get()을 function 오브젝트로 생성한다.
+ * 9. var point의 초기값을 설정한다.
+ * 
+ * 10. 함수 안의 코드를 실행함. (이때 point의 값을 설정한다.)
+ * 11 . 실행 콘텍스트 안에서 관련된 함수와 변수를 사용할 수 있습니다.
+ */
+
+console.log(`member-${new Date().getTime()}`);
+console.log(`member-${Date.now()}`);
+
+const arr = [];
+console.log(typeof arr);
+console.log(Array.isArray(arr));
+
+const date = new Date();
+console.log(date);
+date.setDate(date.getDate() + 1)
+console.log(date);
