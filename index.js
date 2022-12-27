@@ -154,3 +154,23 @@ const date = new Date();
 console.log(date);
 date.setDate(date.getDate() + 1)
 console.log(date);
+
+// 브라우저에서 실행해야하는 코드
+/**
+ * 실행 컨텍스트를 만들때 스코프가 실행시점에 맞춰서 만들어짐
+ */
+// var book = {
+// 	value: 123,
+// 	get: function() {
+// 		var value = 456;
+// 		console.log(this === window);
+// 		console.log(this.value);
+// 	}
+// };
+
+// book.get(); // 일반적인 this의 동작처럼 동작함.
+
+// var fn = book.get;
+// fn();
+// // 실행시점에서 스코프가 결정되기 때문에 this가 window를 가리킴. 고로 true가 나옴
+// // this에 value라는 변수가 없기 떄문에 undefined가 나옴.
