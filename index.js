@@ -174,3 +174,23 @@ console.log(date);
 // fn();
 // // 실행시점에서 스코프가 결정되기 때문에 this가 window를 가리킴. 고로 true가 나옴
 // // this에 value라는 변수가 없기 떄문에 undefined가 나옴.
+
+(function() {
+	console.log("즉시 함수 실행");
+}())
+
+// 브라우저에서 실행해야하는 코드
+/**
+ * 클로저 논리 설명
+ */
+
+// function book(bookParam) {
+// 	var point = 100;
+// 	function getPoint(pointParam) {
+// 		point = point + bookParam + pointParam;
+// 		return point;
+// 	}
+// 	return getPoint;
+// }
+// var obj = book(200);
+// console.log(obj(400)); // 700
